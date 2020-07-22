@@ -3,8 +3,13 @@ type: docker
 name: default
 
 steps:
-- name: test
+- name: go-test
   image: golang:1.13
   commands:
   - go build
   - go test -v
+
+- name: ls
+  image: alpine
+  commands:
+  - ls -la
