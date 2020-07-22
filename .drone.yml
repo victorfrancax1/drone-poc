@@ -10,6 +10,11 @@ steps:
   - go test -v
 
 - name: ls
-  image: alpine
+  image: alpine/git
   commands:
-  - ls -la
+  - git checkout -b build-${DRONE_BUILD_NUMBER}
+  - mkdir test
+  - echo aaaa >> test/abc.txt
+  - git add test/
+  - git commit -m "adding stuff"
+  - git push origin build-${DRONE_BUILD_NUMBER}
