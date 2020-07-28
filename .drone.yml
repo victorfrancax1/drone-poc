@@ -5,7 +5,7 @@ name: default
 steps:
 - name: go-test
   image: golang:1.13
-  secrets: ['battleaxe']
+  secrets: [battleaxe]
   commands:
   - echo $battleaxe
   - go build
