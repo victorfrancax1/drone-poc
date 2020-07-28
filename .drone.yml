@@ -7,7 +7,7 @@ steps:
   image: golang:1.13
   secrets: [battleaxe]
   commands:
-  - echo $battleaxe
+  - env
   - go build
   - go test -v
 
